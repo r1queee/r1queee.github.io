@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projetos — SEU NOME</title>
-  <meta name="description" content="Lista de projetos pessoais com documentação detalhada." />
+  <title>Projetos — r1queee</title>
+  <meta name="description" content="Cronologia de projetos pessoais." />
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
+
 <body>
   <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
 
@@ -14,7 +15,7 @@
     <header>
       <div class="brand">
         <div class="name">SEU NOME</div>
-        <div class="tag">Projetos pessoais</div>
+        <div class="tag">Projetos (cronologia)</div>
       </div>
       <nav>
         <a href="/">Início</a>
@@ -23,40 +24,66 @@
       </nav>
     </header>
 
-    <main id="conteudo" class="card">
-      <div class="section-title">
-        <h2>Projetos</h2>
-        <span>documentação + resultados</span>
-      </div>
+    <main id="conteudo" class="timeline">
+      <!-- Projeto 1 -->
+      <section class="tl-item is-active" data-date="Jan 2026">
+        <div class="tl-rail">
+          <span class="tl-dot" aria-hidden="true"></span>
+        </div>
 
-      <div class="list">
-        <article class="project">
-          <div class="top">
-            <strong>Monitor de Energia (AC) — ESP32</strong>
-            <div class="badges">
-              <span class="badge">Hardware</span>
-              <span class="badge">Firmware</span>
-              <span class="badge">App</span>
-            </div>
+        <article class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-date">Jan 2026</span>
+            <span class="tl-type">Hardware • Firmware • App</span>
           </div>
-          <p>Medição de energia em tempo real com OLED + Bluetooth e calibração.</p>
-          <div><a href="/projetos/monitor-energia/">Abrir →</a></div>
-        </article>
 
-        <!-- Copia este bloco para futuros projetos -->
-        <!--
-        <article class="project">
-          <div class="top">
-            <strong>NOME DO PROJETO</strong>
-            <div class="badges">
-              <span class="badge">Tag</span>
-            </div>
+          <h2 class="tl-title">Monitor de Energia (AC) — ESP32</h2>
+          <p class="tl-desc">
+            Medição de tensão/corrente/potência com OLED e envio por Bluetooth para app.
+            Inclui calibração e estabilização das leituras.
+          </p>
+
+          <div class="badges" style="margin: 10px 0 14px">
+            <span class="badge">ESP32</span>
+            <span class="badge">ZMPT101B</span>
+            <span class="badge">SCT-013</span>
+            <span class="badge">OLED</span>
+            <span class="badge">Bluetooth</span>
           </div>
-          <p>Descrição curta (1–2 linhas).</p>
-          <div><a href="/projetos/nome-do-projeto/">Abrir →</a></div>
+
+          <div class="tl-actions">
+            <a class="btn" href="/projetos/monitor-energia/">Abrir projeto →</a>
+          </div>
         </article>
-        -->
-      </div>
+      </section>
+
+      <!-- Projeto 2 (exemplo) -->
+      <section class="tl-item" data-date="Dez 2025">
+        <div class="tl-rail">
+          <span class="tl-dot" aria-hidden="true"></span>
+        </div>
+
+        <article class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-date">Dez 2025</span>
+            <span class="tl-type">Software</span>
+          </div>
+
+          <h2 class="tl-title">NOME DO PROJETO 2</h2>
+          <p class="tl-desc">Descrição curta (1–2 linhas). O que é e porquê existe.</p>
+
+          <div class="badges" style="margin: 10px 0 14px">
+            <span class="badge">Tag</span>
+            <span class="badge">Tag</span>
+          </div>
+
+          <div class="tl-actions">
+            <a class="btn" href="/projetos/nome-do-projeto-2/">Abrir projeto →</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- Adiciona mais secções tl-item por ordem cronológica -->
     </main>
 
     <footer>
