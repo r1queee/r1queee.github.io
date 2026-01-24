@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O Meu Portfólio</title>
+  <meta name="description" content="Projetos pessoais — eletrónica, software e sistemas embebidos." />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="name">SEU NOME</div>
+        <div class="tag">Eletrónica • Embedded • Software</div>
+      </div>
+
+      <nav>
+        <a href="/" aria-current="page">Início</a>
+        <a href="/projetos/">Projetos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contactos">Contactos</a>
+        <button class="btn" type="button" data-theme-toggle title="Alternar tema">☾/☀</button>
+      </nav>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero">
+        <h1>Projetos pessoais, do protótipo ao produto.</h1>
+        <p>
+          Aqui reúno projetos de eletrónica e software com documentação clara:
+          objetivo, componentes, processo, resultados e próximos passos.
+        </p>
+      </section>
+
+      <section class="grid">
+        <div class="card" id="sobre">
+          <div class="section-title">
+            <h2>Sobre mim</h2>
+            <span>estilo CV (curto)</span>
+          </div>
+
+          <div class="prose">
+            <p>
+              Sou <strong>SEU NOME</strong>, com interesse em <span class="code">eletrónica de potência</span>,
+              <span class="code">sistemas embebidos</span> e <span class="code">IoT</span>.
+              Gosto de construir projetos “end-to-end”: hardware, firmware, app e UI.
+            </p>
+
+            <h3>Competências</h3>
+            <ul>
+              <li>Embedded: ESP32/Arduino, I2C/SPI/UART, sensores</li>
+              <li>Eletrónica: medição AC, proteção, calibração, prototipagem</li>
+              <li>Software: C/C++, Python, apps simples, dashboards</li>
+            </ul>
+
+            <h3>Experiência / Educação</h3>
+            <ul>
+              <li>202X–202X — (ex.: Licenciatura/Curso/Projeto relevante)</li>
+              <li>202X — (ex.: estágio/experiência)</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="card" id="contactos">
+          <div class="section-title">
+            <h2>Contactos</h2>
+            <span>links</span>
+          </div>
+
+          <div class="meta">
+            <div>📍 Lisboa, PT</div>
+            <div>✉️ <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></div>
+            <div>GitHub: <a href="https://github.com/rique" rel="noopener">github.com/rique</a></div>
+            <div>LinkedIn: <a href="https://www.linkedin.com/in/rique" rel="noopener">linkedin.com/in/rique</a></div>
+          </div>
+
+          <hr />
+
+          <div class="meta">
+            <div><strong>Disponível para:</strong></div>
+            <div>• colaboração em projetos</div>
+            <div>• freelancing (pequenos protótipos)</div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="card" style="margin-top:16px">
+        <div class="section-title">
+          <h2>Projetos em destaque</h2>
+          <span><a href="/projetos/">ver todos →</a></span>
+        </div>
+
+        <div class="list">
+          <article class="project">
+            <div class="top">
+              <strong>Monitor de Energia (AC) — ESP32</strong>
+              <div class="badges">
+                <span class="badge">ESP32</span>
+                <span class="badge">ZMPT101B</span>
+                <span class="badge">SCT-013</span>
+                <span class="badge">OLED</span>
+                <span class="badge">Bluetooth</span>
+              </div>
+            </div>
+            <p>
+              Medição de tensão/corrente/potência com visualização local e app.
+              Inclui calibração e alertas.
+            </p>
+            <div>
+              <a href="/projetos/monitor-energia/">Abrir projeto →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> SEU NOME • Feito com HTML/CSS simples
+    </footer>
+  </div>
+
+  <script src="/assets/script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
