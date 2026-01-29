@@ -1,0 +1,13 @@
+@media screen and (max-width: 1200px) {
+  #desktop-nav { display: none; }
+  #hamburger-nav { display: block; }
+}
+
+@media screen and (max-width: 600px) {
+  :root { --nav-h: 84px; }
+  .logo img { height: 48px; }
+
+  .projects-grid{
+    grid-template-columns: minmax(0, 380px);
+  }
+}

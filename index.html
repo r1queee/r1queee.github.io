@@ -1,131 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>O Meu Portfólio</title>
-  <meta name="description" content="Projetos pessoais — eletrónica, software e sistemas embebidos." />
-  <link rel="stylesheet" href="/assets/styles.css" />
-</head>
-<body>
-  <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Henrique Fernandes</title>
 
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="name">SEU NOME</div>
-        <div class="tag">Eletrónica • Embedded • Software</div>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+
+  <body id="top" class="home">
+    <!-- fundo fixo -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div id="spotlight" aria-hidden="true"></div>
+
+    <!-- DESKTOP NAV (fixa, transparente) -->
+    <nav id="desktop-nav">
+      <div class="nav-inner">
+        <a class="logo" href="#profile" aria-label="Topo">
+          <img src="./assets/logo.png" alt="Logo" />
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </div>
+    </nav>
 
-      <nav>
-        <a href="/" aria-current="page">Início</a>
-        <a href="/projetos/">Projetos</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contactos">Contactos</a>
-        <button class="btn" type="button" data-theme-toggle title="Alternar tema">☾/☀</button>
-      </nav>
-    </header>
+    <!-- MOBILE NAV -->
+    <nav id="hamburger-nav">
+      <div class="nav-inner">
+        <a class="logo" href="#profile" aria-label="Topo">
+          <img src="./assets/logo.png" alt="Logo" />
+        </a>
 
-    <main id="conteudo">
-      <section class="hero">
-        <h1>Projetos pessoais, do protótipo ao produto.</h1>
-        <p>
-          Aqui reúno projetos de eletrónica e software com documentação clara:
-          objetivo, componentes, processo, resultados e próximos passos.
-        </p>
-      </section>
-
-      <section class="grid">
-        <div class="card" id="sobre">
-          <div class="section-title">
-            <h2>Sobre mim</h2>
-            <span>estilo CV (curto)</span>
+        <div class="hamburger-menu">
+          <div class="hamburger-icon" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Menu">
+            <span></span><span></span><span></span>
           </div>
 
-          <div class="prose">
-            <p>
-              Sou <strong>SEU NOME</strong>, com interesse em <span class="code">eletrónica de potência</span>,
-              <span class="code">sistemas embebidos</span> e <span class="code">IoT</span>.
-              Gosto de construir projetos “end-to-end”: hardware, firmware, app e UI.
-            </p>
-
-            <h3>Competências</h3>
-            <ul>
-              <li>Embedded: ESP32/Arduino, I2C/SPI/UART, sensores</li>
-              <li>Eletrónica: medição AC, proteção, calibração, prototipagem</li>
-              <li>Software: C/C++, Python, apps simples, dashboards</li>
-            </ul>
-
-            <h3>Experiência / Educação</h3>
-            <ul>
-              <li>202X–202X — (ex.: Licenciatura/Curso/Projeto relevante)</li>
-              <li>202X — (ex.: estágio/experiência)</li>
-            </ul>
-          </div>
+          <ul class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          </ul>
         </div>
+      </div>
+    </nav>
 
-        <aside class="card" id="contactos">
-          <div class="section-title">
-            <h2>Contactos</h2>
-            <span>links</span>
+    <!-- SLIDES (1 secção por “ecrã”) -->
+    <main id="page" class="page-slider">
+      <div class="slides">
+        <!-- PROFILE -->
+        <section id="profile" class="page-section">
+          <div class="section-inner">
+            <p class="section__text__p1">Hello, I'm</p>
+            <h1 class="title">Henrique Fernandes</h1>
+            <p class="section__text__p2">Electrical and Computer Engineering Student</p>
+
+            <div id="socials-container">
+              <img
+                src="./assets/linkedin.png"
+                alt="LinkedIn"
+                class="icon"
+                onclick="location.href='https://www.linkedin.com/in/henrique-fernandes-166812280/'"
+              />
+              <img
+                src="./assets/github.png"
+                alt="Github"
+                class="icon"
+                onclick="location.href='https://github.com/r1queee'"
+              />
+            </div>
           </div>
+        </section>
 
-          <div class="meta">
-            <div>📍 Porto, PT</div>
-            <div>✉️ <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></div>
-            <div>GitHub: <a href="https://github.com/r1queee" rel="noopener">github.com/r1queee</a></div>
-            <div>LinkedIn: <a href="https://www.linkedin.com/in/r1queee" rel="noopener">linkedin.com/in/rique</a></div>
-          </div>
+        <!-- ABOUT -->
+        <section id="about" class="page-section">
+          <div class="section-inner">
+            <p class="section__text__p1">Get To Know More</p>
+            <h1 class="title">About Me</h1>
 
-          <hr />
+            <div class="about-containers">
+              <div class="details-container">
+                <img src="./assets/experience.png" alt="Experience icon" class="icon" />
+                <h3>Experience</h3>
+                <p>Curricular Internship<br />Automation with AI</p>
+              </div>
 
-          <div class="meta">
-            <div><strong>Disponível para:</strong></div>
-            <div>• colaboração em projetos</div>
-            <div>• freelancing (pequenos protótipos)</div>
-          </div>
-        </aside>
-      </section>
-
-      <section class="card" style="margin-top:16px">
-        <div class="section-title">
-          <h2>Projetos em destaque</h2>
-          <span><a href="/projetos/">ver todos →</a></span>
-        </div>
-
-        <div class="list">
-          <article class="project">
-            <div class="top">
-              <strong>Monitor de Energia (AC) — ESP32</strong>
-              <div class="badges">
-                <span class="badge">ESP32</span>
-                <span class="badge">ZMPT101B</span>
-                <span class="badge">SCT-013</span>
-                <span class="badge">OLED</span>
-                <span class="badge">Bluetooth</span>
+              <div class="details-container">
+                <img src="./assets/education.png" alt="Education icon" class="icon" />
+                <h3>Education</h3>
+                <p>Electrical and Computer Engineering Degree</p>
               </div>
             </div>
-            <p>
-              Medição de tensão/corrente/potência com visualização local e app.
-              Inclui calibração e alertas.
-            </p>
-            <div>
-              <a href="/projetos/monitor-energia/">Abrir projeto →</a>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="page-section">
+          <div class="section-inner">
+            <p class="section__text__p1">Browse My Recent</p>
+            <h1 class="title">Projects</h1>
+
+            <div class="projects-grid">
+              <a class="project-card" data-tilt href="./projects/monitor-energia.html">
+                <div class="project-thumb">
+                  <img src="./assets/project-1.png" alt="Monitor Energia" class="project-img" />
+                </div>
+                <h2 class="project-card-title">Energy Monitor</h2>
+              </a>
             </div>
-          </article>
-        </div>
-      </section>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="page-section">
+          <div class="section-inner">
+            <p class="section__text__p1">Get in Touch</p>
+            <h1 class="title">Contact Me</h1>
+
+            <div class="contact-info-upper-container">
+              <div class="contact-info-container">
+                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+                <p><a href="mailto:rique.pessoal@outlook.pt">rique.pessoal@outlook.pt</a></p>
+              </div>
+
+              <div class="contact-info-container">
+                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+                <p><a href="https://www.linkedin.com/in/henrique-fernandes-166812280/">LinkedIn</a></p>
+              </div>
+            </div>
+
+            <footer class="footer">
+              <p>Copyright &#169; 2026 Henrique Fernandes.</p>
+            </footer>
+          </div>
+        </section>
+      </div>
     </main>
 
-    <footer>
-      © <span id="year"></span> SEU NOME • Feito com HTML/CSS simples
-    </footer>
-  </div>
-
-  <script src="/assets/script.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+    <script src="script.js" defer></script>
+  </body>
 </html>
-
