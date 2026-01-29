@@ -1,1 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Energy Monitor</title>
 
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../mediaqueries.css" />
+  </head>
+
+  <body class="home">
+    <!-- fixed background layers -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div id="spotlight" aria-hidden="true"></div>
+
+    <!-- DESKTOP NAV (fixed, transparent) -->
+    <nav id="desktop-nav">
+      <div class="nav-inner">
+        <!-- logo goes to the top of THIS page -->
+        <a class="logo" href="../index.html#profile" aria-label="Home">
+          <img src="../assets/logo.png" alt="Logo" />
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#overview">Project</a></li>
+          <li><a href="#hardware">Hardware</a></li>
+          <li><a href="#design">Design</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- MOBILE NAV (fixed) -->
+    <nav id="hamburger-nav">
+      <div class="nav-inner">
+        <a class="logo" href="../index.html#profile" aria-label="Home">
+          <img src="../assets/logo.png" alt="Logo" />
+        </a>
+
+        <div class="hamburger-menu">
+          <div class="hamburger-icon" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </div>
+
+          <ul class="menu-links">
+            <li><a href="../index.html#profile" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#hardware" onclick="toggleMenu()">Hardware</a></li>
+            <li><a href="#results" onclick="toggleMenu()">Results</a></li>
+            <li><a href="#gallery" onclick="toggleMenu()">Gallery</a></li>
+            <li><a href="#next" onclick="toggleMenu()">Next</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- SLIDES -->
+    <main id="page" class="page-slider">
+      <div class="slides">
+        <!-- 1) OVERVIEW -->
+        <section id="overview" class="page-section">
+          <div class="section-inner">
+            <p class="section__text__p1">Project</p>
+            <h1 class="title">Energy Monitor</h1>
+
+            <div class="two-col equal-cards">
+              <div class="glass-panel">
+                <p class="muted" style="margin-bottom: 0.8rem;">
+                  A real-time energy monitoring device that measures consumption, stores history, and exposes data to a dashboard.
+                </p>
+
+                <div class="chip-row" style="justify-content:center;">
+                  <span class="chip">ESP32</span>
+                  <span class="chip">AC Measurement</span>
+                  <span class="chip">Wi-Fi</span>
+                  <span class="chip">PCB</span>
+                  <span class="chip">Dashboard</span>
+                </div>
+
+                <div class="link-row" style="justify-content:center; margin-top: 1rem;">
+                  <!-- put real links when you have them -->
+                  <a class="link-btn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+                  <a class="link-btn" href="#" target="_blank" rel="noreferrer">Demo</a>
+                  <a class="link-btn" href="../index.html#projects">Back to Projects</a>
+                </div>
+              </div>
+
+              <div class="project-card" style="transform:none;">
+                <div class="project-thumb">
+                  <img src="../assets/project-1.png" alt="Results graph / dashboard" class="project-img" />
+                </div>
+                <h2 class="project-card-title">Graphs / Dashboard</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2) GOALS -->
+        <section id="goals" class="page-section scrollable">
+          <div class="section-inner">
+            <p class="section__text__p1">Why I built it</p>
+            <h1 class="title">Goals</h1>
+
+            <div class="glass-panel">
+              <ul class="bullets">
+                <li>Measure household energy usage in real time (power + energy).</li>
+                <li>Track usage over time (daily/weekly/monthly history).</li>
+                <li>Expose data through a clean dashboard and API.</li>
+                <li>Design a compact and reliable PCB solution.</li>
+              </ul>
+            </div>
+
+            <div class="media-grid media-grid-goals">
+              <div class="project-card" style="transform:none;">
+                <div class="project-thumb">
+                  <img src="../assets/project-1.png" alt="Prototype" class="project-img" />
+                </div>
+                <h2 class="project-card-title">Prototype</h2>
+              </div>
+
+              <div class="project-card" style="transform:none;">
+                <div class="project-thumb">
+                  <img src="../assets/project-1.png" alt="Dashboard" class="project-img" />
+                </div>
+                <h2 class="project-card-title">Dashboard</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3) HARDWARE -->
+        <section id="hardware" class="page-section">
+          <div class="section-inner">
+            <p class="section__text__p1">Build</p>
+            <h1 class="title">Hardware</h1>
+
+            <!-- Horizontal carousel (component-by-component) -->
+            <div class="hw-carousel" data-hw-carousel aria-label="Hardware components">
+              <div class="hw-viewport">
+                <div class="hw-track">
+                  <!-- 1) ESP-32 -->
+                  <article class="hw-slide" data-hw-title="ESP-32">
+                    <div class="hw-two">
+                      <div class="hw-pane hw-text">
+                        <h2 class="h2">ESP-32</h2>
+                        <ul class="bullets">
+                          <li>MCU principal do projeto</li>
+                          <li>Wi-Fi / BLE</li>
+                          <li>Leitura ADC + cálculo RMS</li>
+                          <li>Bluetooth para app</li>
+                          <li>Gestão do display (I2C)</li>
+                        </ul>
+                      </div>
+
+                      <div class="hw-pane hw-media">
+                        <div class="hw-media-frame">
+                          <img class="hw-media-img" src="../assets/esp32.png" alt="ESP-32 DevKit" />
+                        </div>
+                        <div class="hw-caption">ESP32 DevKit Module</div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- 2) SCT-013-100 -->
+                  <article class="hw-slide" data-hw-title="SCT-013-100">
+                    <div class="hw-two">
+                      <div class="hw-pane hw-text">
+                        <h2 class="h2">SCT-013-100</h2>
+                        <ul class="bullets">
+                          <li>Sensor de corrente (CT) não-invasivo</li>
+                          <li>Isolamento (segurança em AC)</li>
+                          <li>Burden / escala e calibração</li>
+                          <li>Boa opção para cargas domésticas</li>
+                        </ul>
+                      </div>
+
+                      <div class="hw-pane hw-media">
+                        <div class="hw-media-frame">
+                          <img class="hw-media-img" src="../assets/sct013.png" alt="SCT-013-100" />
+                        </div>
+                        <div class="hw-caption">CT / SCT-013-100</div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- 3) ZMPT101B -->
+                  <article class="hw-slide" data-hw-title="ZMPT101B">
+                    <div class="hw-two">
+                      <div class="hw-pane hw-text">
+                        <h2 class="h2">ZMPT101B</h2>
+                        <ul class="bullets">
+                          <li>Sensor de tensão AC (amostragem no ADC)</li>
+                          <li>Ajuste de ganho/offset</li>
+                          <li>Filtragem + estabilidade</li>
+                          <li>Calibração com referência (carga resistiva)</li>
+                        </ul>
+                      </div>
+
+                      <div class="hw-pane hw-media">
+                        <div class="hw-media-frame">
+                          <img class="hw-media-img" src="../assets/zmpt101b.png" alt="ZMPT101B" />
+                        </div>
+                        <div class="hw-caption">Voltage / ZMPT101B</div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- 4) SSD1306 -->
+                  <article class="hw-slide" data-hw-title="SSD1306">
+                    <div class="hw-two">
+                      <div class="hw-pane hw-text">
+                        <h2 class="h2">SSD1306</h2>
+                        <ul class="bullets">
+                          <li>Display OLED para leitura local</li>
+                          <li>I2C</li>
+                          <li>Baixo consumo</li>
+                          <li>UI simples (V / A / W)</li>
+                        </ul>
+                      </div>
+
+                      <div class="hw-pane hw-media">
+                        <div class="hw-media-frame">
+                          <img class="hw-media-img" src="../assets/ssd1306.png" alt="OLED SSD1306" />
+                        </div>
+                        <div class="hw-caption">OLED / SSD1306</div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- 5) APV-8-5 -->
+                  <article class="hw-slide" data-hw-title="APV-8-5">
+                    <div class="hw-two">
+                      <div class="hw-pane hw-text">
+                        <h2 class="h2">APV-8-5</h2>
+                        <ul class="bullets">
+                          <li>Fonte AC → DC (5V)</li>
+                          <li>Base para regulação 3.3V</li>
+                          <li>Estabilidade de alimentação</li>
+                          <li>Isolamento / segurança (AC)</li>
+                        </ul>
+                      </div>
+
+                      <div class="hw-pane hw-media">
+                        <div class="hw-media-frame">
+                          <img class="hw-media-img" src="../assets/apv85.png" alt="Fonte APV-8-5" />
+                        </div>
+                        <div class="hw-caption">Power / APV-8-5</div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- dots are generated by JS -->
+              <div class="hw-dots" role="tablist" aria-label="Selecionar componente"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4) DESIGN -->
+        <section id="design" class="page-section scrollable">
+          <div class="section-inner">
+            <p class="section__text__p1">Design</p>
+            <h1 class="title">Schematic & PCB</h1>
+
+            <div class="media-grid media-grid-2">
+              <!-- Schematic: 1 imagem -->
+              <a
+                class="project-card media-open"
+                href="../assets/schematic.png"
+                data-title="Schematic"
+                style="transform:none;"
+              >
+                <div class="project-thumb">
+                  <img src="../assets/schematic.png" alt="Schematic completo" class="project-img" />
+                </div>
+                <h2 class="project-card-title">Schematic</h2>
+              </a>
+
+              <!-- PCB: 2 imagens (frente/trás) -->
+              <a
+                class="project-card media-open"
+                href="../assets/pcb-front.png"
+                data-title="PCB"
+                data-front="../assets/pcb-front.png"
+                data-back="../assets/pcb-back.png"
+                style="transform: none;"
+              >
+                <div class="project-thumb">
+                  <img src="../assets/pcb-front.png" alt="PCB (frente)" class="project-img" />
+                </div>
+                <h2 class="project-card-title">PCB</h2>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5) SOFTWARE -->
+        <section id="software" class="page-section scrollable">
+          <div class="section-inner">
+            <p class="section__text__p1">Firmware + data</p>
+            <h1 class="title">Software</h1>
+
+            <div class="glass-panel">
+              <h2 class="h2">Architecture</h2>
+              <ul class="bullets">
+                <li>Sampling + filtering to get stable RMS readings.</li>
+                <li>Energy integration over time (Wh / kWh).</li>
+                <li>Wi-Fi transport (MQTT / HTTP) to send telemetry.</li>
+                <li>Dashboard consumes the API and plots history.</li>
+              </ul>
+
+              <h2 class="h2" style="margin-top: 1rem;">What I focused on</h2>
+              <ul class="bullets">
+                <li>Accuracy vs. sampling rate and noise.</li>
+                <li>Resilience: reconnect logic and data buffering.</li>
+                <li>Calibration routine and storing calibration constants.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6) RESULTS -->
+        <section id="results" class="page-section scrollable">
+          <div class="section-inner">
+            <p class="section__text__p1">Outcome</p>
+            <h1 class="title">Results</h1>
+
+            <div class="two-col equal-cards">
+              <div class="glass-panel">
+                <h2 class="h2">Highlights</h2>
+                <ul class="bullets">
+                  <li>Real-time power readout and energy accumulation.</li>
+                  <li>History stored and displayed in the dashboard.</li>
+                  <li>Stable readings after filtering and calibration.</li>
+                </ul>
+
+                <h2 class="h2" style="margin-top: 1rem;">Metrics (fill yours)</h2>
+                <ul class="bullets">
+                  <li>Update rate: ~1s</li>
+                  <li>Error: ±(…)% after calibration</li>
+                  <li>Idle power: … mW</li>
+                </ul>
+              </div>
+
+              <div class="project-card" style="transform:none;">
+                <div class="project-thumb">
+                  <img src="../assets/project-1.png" alt="Results graph / dashboard" class="project-img" />
+                </div>
+                <h2 class="project-card-title">Graphs / Dashboard</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7) GALLERY -->
+        <section id="gallery" class="page-section scrollable">
+          <div class="section-inner">
+            <p class="section__text__p1">Media</p>
+            <h1 class="title">Gallery</h1>
+
+            <div class="media-grid">
+              <div class="project-card" style="transform:none;">
+                <div class="project-thumb">
+                  <img src="../assets/project-1.png" alt="Photo 1" class="project-img" />
+                </div>
+                <h2 class="project-card-title">Photo 1</h2>
+              </div>
+
+              <div class="project-card" style="transform:none;">
+                <div class="project-thumb">
+                  <img src="../assets/project-1.png" alt="Photo 2" class="project-img" />
+                </div>
+                <h2 class="project-card-title">Photo 2</h2>
+              </div>
+
+              <div class="project-card" style="transform:none;">
+                <div class="project-thumb">
+                  <img src="../assets/project-1.png" alt="Photo 3" class="project-img" />
+                </div>
+                <h2 class="project-card-title">Photo 3</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8) CONTACT -->
+        <section id="contact" class="page-section">
+          <div class="section-inner">
+            <p class="section__text__p1">Any quesions?</p>
+            <h1 class="title">Feel Free to Contact Me</h1>
+
+            <div class="contact-info-upper-container">
+              <div class="contact-info-container">
+                <img src="../assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+                <p><a href="mailto:rique.pessoal@outlook.pt">rique.pessoal@outlook.pt</a></p>
+              </div>
+
+              <div class="contact-info-container">
+                <img src="../assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+                <p><a href="https://www.linkedin.com/in/henrique-fernandes-166812280/">LinkedIn</a></p>
+              </div>
+            </div>
+
+            <footer class="footer">
+              <p>Copyright &#169; 2026 Henrique Fernandes.</p>
+            </footer>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <script src="../script.js" defer></script>
+  </body>
+</html>
