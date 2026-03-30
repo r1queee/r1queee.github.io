@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoRaWAN Environmental Node | Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Animated Orbs -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <header style="padding: 2rem 1rem 1rem;">
+        <h1 style="font-size: 2.2rem;">LoRaWAN Environmental Node</h1>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="LoRaWAN Environmental Node" class="project-hero">
+        
+        <div class="project-detail-content">
+            <div class="tags" style="margin-bottom: 2rem;">
+                <span class="tag">LoRaWAN</span>
+                <span class="tag">KiCad</span>
+                <span class="tag">I2C Sensors</span>
+                <span class="tag">IoT</span>
+            </div>
+
+            <h2>Project Overview</h2>
+            <p>Designed for smart digital agriculture, this modular device collects critical metrics where cellular and Wi-Fi networks fail. It transmits encoded data over miles (tested up to 12 km in zero visibility) using The Things Network's LoRa sensor infrastructure.</p>
+            
+            <h2>Hardware Architecture</h2>
+            <p>The development went from a breadboard phase to a 4-layer PCB designed in KiCad, strictly adhering to trace antenna constraints and optimized isolation zones.</p>
+            <ul>
+                <li><strong>Efficient Brain:</strong> Atmel SAMD21 microcontroller, perfect for its low-frequency clock that runs in the deepest 'Sleep' mode, waking up via internal hardware timers.</li>
+                <li><strong>RF Transceiver:</strong> HopeRF RFM95 module operating at 868MHz, requiring exact capacitor calibration to boost the Tx signal power strictly within the levels permitted by the European Union.</li>
+                <li><strong>Thermal and Power Management:</strong> Equipped with a Texas Instruments BQ24072C IC, it harvests tiny energy pulses from a 5V/200mA mini solar panel to keep a 1500mAh LFP cell perpetually charged.</li>
+            </ul>
+
+            <h2>Low-Power Engineering</h2>
+            <p>By disabling unused pull-up pins, using P-Channel MOSFETs to cut power to sensors (when unneeded), and employing an RTC (Real Time Clock), the idle, silent circuit draws a mere ~3.5 microAmperes of current.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Henrique Fernandes.</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

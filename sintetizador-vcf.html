@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog VCF Synthesizer | Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Animated Orbs -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <header style="padding: 2rem 1rem 1rem;">
+        <h1 style="font-size: 2.2rem;">Analog VCF Synthesizer</h1>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        
+        <img src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Analog VCF Synthesizer" class="project-hero">
+        
+        <div class="project-detail-content">
+            <div class="tags" style="margin-bottom: 2rem;">
+                <span class="tag">Analog Audio</span>
+                <span class="tag">VCF Design</span>
+                <span class="tag">PCB Routing</span>
+            </div>
+
+            <h2>Philosophy and Vision</h2>
+            <p>This Voltage Controlled Filter module stems from a deep love for old-school audio design, focusing on a dirty yet rich sound full of the pleasant harmonics typical of operational amplifier saturation. It drops into a standard 3U Eurorack case and requires the typical ±12V power supply standard.</p>
+
+            <h2>Circuit Features</h2>
+            <p>The design is based on the venerable LM13700 OTA chip in a 4th-order low-pass configuration, delivering a steep frequency response of 24 decibels per octave.</p>
+            <ul>
+                <li><strong>Input Mixer:</strong> Three passively mixed audio inputs coupled into an LM324 buffer, allowing users to feed multiple complex waveforms and generate dense sounds prior to filtering.</li>
+                <li><strong>Feedback Resonance:</strong> A feedback path from the final stage back to the first, with exponential control on the VCA pole, produces an extremely aggressive and responsive resonance squeal (capable of self-oscillation without any stimulus signal at the input).</li>
+                <li><strong>Manual and PCB Techniques:</strong> The internal buffers of the LM13700s suffer from thermal distortion; thus, extra low-noise transistors (BC547/557) were used as substitute Darlington pairs for a much more transparent sonic result up until the desired saturation kicks in.</li>
+            </ul>
+
+            <h2>The Visual Panel</h2>
+            <p>To interact immediately in a dim studio environment (or live setting), the entire metallic potentiometer interface features golden indicator panels (ENIG PCB fabrication) over the board's silky black soldermask, marrying tactile performance with geometric precision.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Henrique Fernandes.</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

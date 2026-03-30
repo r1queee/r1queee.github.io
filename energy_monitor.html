@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Monitor | Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Background Animated Orbs -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <header style="padding: 2rem 1rem 1rem;">
+        <h1 style="font-size: 2.2rem;">Energy Monitor</h1>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i>Go back</a>
+
+        <img src="../assets/project-1.png" alt="Energy Monitor" class="project-hero">
+
+        <div class="project-detail-content">
+
+            <h2>Overview</h2>
+            <p>The Energy Monitor is a sophisticated, real-time IoT device built to provide profound insights into a
+                building's electrical footprint. By continuously sampling voltage and current at the mains, it
+                calculates exact active power, reactive power, and power factor. These metrics are processed and
+                streamed to live dashboard graphics, empowering users to track daily habits, isolate energy hogs, and
+                ultimately reduce their environmental impact and electricity costs through data-driven decisions.</p>
+
+            <h2>Goals</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content"><strong>Real-Time Analytics:</strong> Accurately measure active and
+                        reactive power consumption at the mains to instantly detect shifts in household energy usage.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content"><strong>Historical Tracking:</strong> Log high-resolution data over
+                        time to build comprehensive daily, weekly, and monthly profiles of electricity consumption.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content"><strong>Accessible Interfaces:</strong> Seamlessly stream live metrics
+                        through a sleek web dashboard and a local REST API for custom smart-home integrations.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content"><strong>Robust Hardware Design:</strong> Engineer a safe, compact, and
+                        highly reliable bespoke PCB capable of long-term operation within a main electrical panel.</div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Components Used</h2>
+            <div class="components-carousel">
+                <div class="component-card">
+                    <img src="assets/esp32.png" alt="ESP32 Microcontroller" class="component-img">
+                    <div class="component-info">
+                        <h3>ESP32 Microcontroller</h3>
+                        <p class="component-desc">The brain of the project. It reads sensor data and acts as an
+                            asynchronous web server to host the dashboard.</p>
+                    </div>
+                </div>
+                <div class="component-card">
+                    <img src="assets/sct013.png" alt="SCT-013 Current Sensor" class="component-img">
+                    <div class="component-info">
+                        <h3>SCT-013 Sensor</h3>
+                        <p class="component-desc">Non-invasive current sensor that clamps around the live wire in the
+                            main electrical panel.</p>
+                    </div>
+                </div>
+                <div class="component-card">
+                    <img src="assets/zmpt101b.png" alt="ZMPT101B Voltage Sensor" class="component-img">
+                    <div class="component-info">
+                        <h3>ZMPT101B Transformer</h3>
+                        <p class="component-desc">Active AC voltage transformer module used to safely and precisely
+                            sample the mains voltage waveform.</p>
+                    </div>
+                </div>
+                <div class="component-card">
+                    <img src="assets/ssd1306.png" alt="SSD1306 OLED Display" class="component-img">
+                    <div class="component-info">
+                        <h3>SSD1306 OLED Display</h3>
+                        <p class="component-desc">A crisp 0.96-inch I2C display that provides real-time local readouts
+                            of voltage, current, and active power.</p>
+                    </div>
+                </div>
+                <div class="component-card">
+                    <img src="assets/apv85.png" alt="Mean Well APV-8-5" class="component-img">
+                    <div class="component-info">
+                        <h3>Mean Well APV-8-5</h3>
+                        <p class="component-desc">A reliable isolated AC-DC switching power supply providing a stable 5V
+                            output to safely power the circuitry.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Custom PCB Design</h2>
+            <div
+                style="display: flex; gap: 2rem; margin-top: 2rem; margin-bottom: 3rem; flex-wrap: wrap; justify-content: center;">
+                <img src="assets/pcb-front.png" alt="PCB Front Design" class="project-hero"
+                    style="margin: 0; display: block; width: auto; max-width: 100%; height: auto; max-height: 400px;">
+                <img src="assets/pcb-back.png" alt="PCB Back Design" class="project-hero"
+                    style="margin: 0; display: block; width: auto; max-width: 100%; height: auto; max-height: 400px;">
+            </div>
+            <p>To ensure robust long-term operation within the main electrical panel, a bespoke two-layer Printed
+                Circuit Board (PCB) was engineered. This clean, compact design seamlessly integrates the ESP32
+                microcontroller, the analog signal conditioning circuits for the SCT-013 and ZMPT101B sensors, and an
+                isolated AC-DC power module. By eliminating messy point-to-point wiring, the custom board significantly
+                reduces electrical noise and enhances the safety and reliability of the high-voltage system.</p>
+
+            <h2>Dashboard & Data Visualization</h2>
+            <img src="assets/dashboard_ui.png" alt="Live Dashboard Interface" class="project-hero"
+                style="margin: 2rem auto 3rem auto; display: block; width: auto; max-width: 100%; height: auto; max-height: 500px;">
+            <p>To make the data actionable, the project includes a bespoke web dashboard designed to run 24/7 on a
+                dedicated display. Served entirely from the ESP32's internal flash memory, the interface features live
+                digital gauges for instant readouts and dynamic charts to plot consumption trends. The dark modern
+                aesthetic ensures it blends seamlessly into a high-tech smart home environment.</p>
+            <h2>System Demonstration</h2>
+            <div class="video-container" style="border-radius: 24px; overflow: hidden; margin: 2rem 0 3rem 0; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); border: 1px solid var(--card-border);">
+                <video width="100%" controls preload="metadata" style="display: block; background: #000; outline: none;">
+                    <source src="assets/explanatory_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p>Watch this brief explanatory video to see the Energy Monitor in action. It covers the real-time responsiveness of the dashboard, historical data tracking, and provides a closer look at the physical installation inside the electrical panel.</p>
+
+            <div class="btn-group">
+                <a href="#" class="btn"><i class="fab fa-github" style="margin-right: 0.5rem;"></i>Source Code</a>
+                <a href="http://monitor-energia.local" target="_blank" class="btn btn-outline"><i
+                        class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>Live Dashboard</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Henrique Fernandes.</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>

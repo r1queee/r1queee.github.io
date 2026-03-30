@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPV OSD Flight Controller | Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Animated Orbs -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <header style="padding: 2rem 1rem 1rem;">
+        <h1 style="font-size: 2.2rem;">FPV OSD Flight Controller</h1>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        
+        <img src="https://images.unsplash.com/photo-1520038419996-33924715560b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="FPV OSD Flight Controller" class="project-hero">
+        
+        <div class="project-detail-content">
+            <div class="tags" style="margin-bottom: 2rem;">
+                <span class="tag">STM32</span>
+                <span class="tag">Visualization</span>
+                <span class="tag">Drone</span>
+            </div>
+
+            <h2>Why Build a Custom OSD?</h2>
+            <p>When flying racing drones at over 120km/h (75mph) with FPV goggles, you urgently need overlaid telemetry that listens to the main motor brain in guaranteed real-time, within a tiny footprint — this was designed in a strict 16x16 mm mounting form factor specifically for "Toothpick" (Ultra-Light) class drones.</p>
+
+            <h2>Overcoming Challenges</h2>
+            <ul>
+                <li><strong>High-Throughput Serial Protocol:</strong> Writing pure C on an STM32G4 to handle crucial UART packets in DMA mode, safely parsing the native "Betaflight / MultiWii" language without stalling the CPU, and prioritizing compass updates on-screen versus critical LiPo voltage warnings.</li>
+                <li><strong>Analog Video Overlay Layer:</strong> The MAX7456 is quite temperamental regarding NTSC vs. PAL signals and surge protection. We embedded several tantalum capacitors on the supply layer because the electrical spikes from the drone's 4 motors introduced static lines directly into the digital overlay over the base image.</li>
+                <li><strong>The Pixel-Art Font-Set:</strong> Numeric fonts and icons were designed in a pixel map using a static hexadecimal bit-mask integrated directly into the C FLASH. They are transferred upon boot via SPI to the ROM in the OSD IC.</li>
+            </ul>
+
+            <h2>Final Robustness</h2>
+            <p>The final module withstands substantial crash impacts thanks to the conformal coating (waterproof insulation) resin, which protects the tiny oscillating crystals from direct ingress of messy grass, dirt, or morning dew condensation during long-term outdoor operations.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Henrique Fernandes.</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
